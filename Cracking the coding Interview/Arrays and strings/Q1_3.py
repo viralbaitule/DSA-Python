@@ -20,8 +20,17 @@ def check_permutation(s1,s2):
 	return(permute_and_check(s1,s2,0,len(s1)-1,"False"))
 	
 
+def check_permuatation_sorting(s1,s2):
+	s1=list(s1)
+	s2=list(s2)
+	s1.sort()
+	s2.sort()
+	return s1==s2
+
 s1="dog"
 s2="god"
 
 
 print(check_permutation(s1,s2))
+print ("using sorting alorithm")
+print (check_permuatation_sorting(s1,s2))
