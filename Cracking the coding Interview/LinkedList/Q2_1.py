@@ -1,4 +1,5 @@
 import sys
+## below path contains the singly and douubly linked list code 
 sys.path.insert(0, 'C:/Drive/Study/DSA-Python/custom_modules')
 from singly import node,singly
 
