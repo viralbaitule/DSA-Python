@@ -7,8 +7,8 @@ class stack(object):
 
 	def push(self,data):
 		self.que1.put(data)
-		while self.que1.qsize()>1:
-			self.que2.put(self.que1.get())
+		while self.que2.qsize():
+			self.que1.put(self.que2.get())
 		self.que1, self.que2 =  self.que2, self.que1
 
 	def pop(self):
@@ -16,12 +16,19 @@ class stack(object):
 		return top
 	def printstack(self):
 		for n in range(self.que2.qsize()):
-			print (self.que2[n])
+			value=self.que2.get()
+			print (value)
+			self.que2.put(value)
 
 
 
 
 s=stack()
 s.push(6)
+s.push(3)
+s.push(2)
+s.push(7)
+s.push(8)
+
 s.printstack()
 			
