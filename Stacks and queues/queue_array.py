@@ -3,14 +3,19 @@ class queue(object):
 	def __init__(self, limit=10):
 		self.limit=limit
 		self.que = []
+
 	def enqueue(self,data):
 		self.que.insert(0,data)
+
 	def dequeue(self):
 		self.que.pop()
+
 	def isEmpty(self):
 		return len(self.que)==0
+
 	def isFull(self):
 		return len(self.que)>=self.limit
+		
 	def printqueue(self):
 		print(self.que)
 
