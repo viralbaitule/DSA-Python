@@ -12,6 +12,7 @@ class stack(object):
 	def pop(self):
 		top=self.que.get()
 		return top
+		
 	def printstack(self):
 		for n in range(self.que.qsize()):
 			value=self.que.get()
