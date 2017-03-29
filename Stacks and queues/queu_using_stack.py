@@ -5,12 +5,14 @@ class queue(object):
 		self.stack1 =[]
 		self.stack2 =[]
 		self.limit=limit
+		
 	def enqueue(self,data):
 		for i in self.stack1:
 			self.stack2.append(i)
 		self.stack1.append(data)
 		for i in self.stack2:
 			self.stack1.append(i)
+
 	def dequeue(self):
 		return self.stack1.pop()
 
