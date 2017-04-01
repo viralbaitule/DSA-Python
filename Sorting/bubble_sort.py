@@ -1,5 +1,5 @@
 def bubble_sort(list1):
-	for i in list1:
+	for i in range len(list1):
 		min=i
 		print (i)
 
