@@ -1,7 +1,7 @@
-def bubble_sort(self,list1):
-
-
-
+def bubble_sort(list1):
+	for i in list1:
+		min=i
+		print (i)
 
 
 
