@@ -10,7 +10,7 @@ def partition(list1,start,end):
 	for i in range(start,end):
 		if list1[i]<=pivot:
 			list1[i],list1[pindex]=list1[pindex],list1[i]
-			pindex-=1
+			pindex+=1
 	list1[pindex],list1[end]=list1[end],list1[pindex]
 	return pindex
 
