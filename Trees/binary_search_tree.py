@@ -64,7 +64,12 @@ def inorder(root):
 	print(root.data)
 	inorder(root.right)
 
-
+def postorder(root):
+	if root==None:
+		return
+	postorder(root.left)
+	postorder(root.right)
+	print(root.data)qu
 
 
 root=binaryTreeNode(4)
@@ -73,4 +78,4 @@ insert(root,binaryTreeNode(6))
 insert(root,binaryTreeNode(7))
 insert(root,binaryTreeNode(10))
 insert(root,binaryTreeNode(15))
-inorder(root)
+postorder(root)
