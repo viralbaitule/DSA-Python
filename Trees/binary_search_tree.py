@@ -33,6 +33,15 @@ def searchNode(root,value):
 			return searchNode(root.left,value)
 	return False
 
+def findmin(root):
+	while root.left!=None:
+		root=root.left
+	return root.data
+
+def findmax(root):
+	while root.right!=None:
+		root=root.right
+	return root.data
 
 root=binaryTreeNode(4)
 insert(root,binaryTreeNode(3))
@@ -41,4 +50,6 @@ insert(root,binaryTreeNode(7))
 insert(root,binaryTreeNode(10))
 insert(root,binaryTreeNode(1))
 print(searchNode(root,3))
+print(findmin(root))
+print(findmax(root))
 
