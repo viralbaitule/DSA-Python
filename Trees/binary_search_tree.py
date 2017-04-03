@@ -57,6 +57,15 @@ def preorder(root):
 	preorder(root.left)
 	preorder(root.right)
 
+def inorder(root):
+	if root==None:
+		return
+	inorder(root.left)
+	print(root.data)
+	inorder(root.right)
+
+
+
 
 root=binaryTreeNode(4)
 insert(root,binaryTreeNode(3))
@@ -64,8 +73,4 @@ insert(root,binaryTreeNode(6))
 insert(root,binaryTreeNode(7))
 insert(root,binaryTreeNode(10))
 insert(root,binaryTreeNode(15))
-print(searchNode(root,3))
-print(findmin(root))
-print(findmax(root))
-print(findheight(root))
-preorder(root)
+inorder(root)
