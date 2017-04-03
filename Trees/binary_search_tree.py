@@ -43,13 +43,21 @@ def findmax(root):
 		root=root.right
 	return root.data
 
+def findheight(root):
+	if root==None:
+		return -1
+	leftheight=findheight(root.left)
+	rightheight=findheight(root.right)
+	return max(leftheight,rightheight)+1
+
+
 root=binaryTreeNode(4)
 insert(root,binaryTreeNode(3))
 insert(root,binaryTreeNode(6))
 insert(root,binaryTreeNode(7))
 insert(root,binaryTreeNode(10))
-insert(root,binaryTreeNode(1))
+insert(root,binaryTreeNode(15))
 print(searchNode(root,3))
 print(findmin(root))
 print(findmax(root))
-
+print(findheight(root))
