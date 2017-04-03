@@ -50,6 +50,13 @@ def findheight(root):
 	rightheight=findheight(root.right)
 	return max(leftheight,rightheight)+1
 
+def preorder(root):
+	if root==None:
+		return
+	print(root.data)
+	preorder(root.left)
+	preorder(root.right)
+
 
 root=binaryTreeNode(4)
 insert(root,binaryTreeNode(3))
@@ -61,3 +68,4 @@ print(searchNode(root,3))
 print(findmin(root))
 print(findmax(root))
 print(findheight(root))
+preorder(root)
