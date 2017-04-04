@@ -69,13 +69,47 @@ def postorder(root):
 		return
 	postorder(root.left)
 	postorder(root.right)
-	print(root.data)qu
+	print(root.data)
 
+def deleteNode(root,value):
+	if root==None:
+		return root
+	elif value<root.data:
+		root.left=deleteNode(root.left,value)
+	elif value>root.data:
+		root.right=deleteNode(root.right,value)
+	else:
+		#case 1: No child
+		if root.left==None and root.right==None:
+			root=None
+			#case 2: one child
+		elif root.left==None:
+			right=root.right
+			del root
+			return right
+			
+		elif root.right==None:
+			left=root.left
+			del root
+			return left
+			#case 3: two childs
+		else:
+			tempdata=findmin(root.right)
+			root.data=tempdata
+			root.right=deleteNode(root.right,tempdata)
+	return root
 
-root=binaryTreeNode(4)
+root=binaryTreeNode(8)
 insert(root,binaryTreeNode(3))
-insert(root,binaryTreeNode(6))
-insert(root,binaryTreeNode(7))
 insert(root,binaryTreeNode(10))
-insert(root,binaryTreeNode(15))
+insert(root,binaryTreeNode(1))
+insert(root,binaryTreeNode(6))
+insert(root,binaryTreeNode(4))
+insert(root,binaryTreeNode(7))
+insert(root,binaryTreeNode(14))
+insert(root,binaryTreeNode(13))
 postorder(root)
+print("after delete")
+deleteNode(root,6)
+postorder(root)
+
