@@ -16,9 +16,16 @@ class stack(object):
 		print (self.stk)
 
 
-
-
-
+def check_palendrome(data):
+	newstack=stack()
+	for i in data:
+		newstack.push(i)
+	for i in data:
+		if i ==newstack.pop():
+			continue
+		else:
+			return False
+	return True
 
 
 
